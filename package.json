@@ -28,8 +28,8 @@
     "build": "unbuild",
     "lint": "eslint .",
     "format": "nr lint --fix",
-    "prepublishOnly": "nr lint && nlx publint && nr build",
-    "release": "nr lint && nlx publint && nlx bumpp"
+    "prepublishOnly": "nr lint && nr build && nlx publint",
+    "release": "nr lint && nr build && nlx publint && nlx bumpp"
   },
   "dependencies": {
     "@antfu/eslint-config": "^4.10.2",
