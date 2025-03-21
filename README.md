@@ -11,7 +11,7 @@ npm i -D @wrtnlabs/eslint-config
 ```ts
 // eslint.config.js
 
-import { wrtnlabs } from '@wrtnlabs/eslint-config';
+import { wrtnlabs } from "@wrtnlabs/eslint-config";
 
 export default wrtnlabs({ /* options */ });
 ```

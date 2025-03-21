@@ -1,0 +1,24 @@
+{
+  "name": "@wrtnlabs/eslint-config",
+  "type": "module",
+  "version": "0.0.1",
+  "packageManager": "pnpm@10.6.4",
+  "author": "sunrabbit123",
+  "license": "MIT",
+  "exports": "./index.ts",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "dependencies": {
+    "@antfu/eslint-config": "^4.10.2",
+    "defu": "^6.1.4",
+    "pkg-types": "^2.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.22.0",
+    "eslint-plugin-format": "^1.0.1",
+    "importx": "^0.5.2",
+    "typescript": "^5.8.2"
+  }
+}
