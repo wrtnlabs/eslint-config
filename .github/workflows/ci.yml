@@ -1,7 +1,7 @@
 name: CI
 
 on:
-    push:
+  push:
 
 jobs:
   publish:
@@ -10,7 +10,7 @@ jobs:
       id-token: write
       contents: none
     steps:
-        - uses: actions/checkout@v4
-        - uses: pnpm/action-setup@v4
-        - run: pnpm install --frozen-lockfile
-        - run: pnpm lint
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
