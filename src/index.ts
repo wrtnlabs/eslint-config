@@ -29,6 +29,9 @@ export async function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): Pr
       quotes: "double",
       semi: true,
       jsx: true,
+      overrides: {
+        "antfu/top-level-function": "error", // https://github.com/antfu/eslint-plugin-antfu/blob/main/src/rules/top-level-function.md
+      },
     },
   } as const satisfies UserOptions);
 
