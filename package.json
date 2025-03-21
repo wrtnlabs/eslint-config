@@ -16,14 +16,14 @@
     },
     "./package.json": "./package.json"
   },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist"
+  ],
   "engines": {
     "node": "^18.18.0 || >=20.0.0"
   },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
-  ],
   "scripts": {
     "build": "unbuild",
     "lint": "eslint .",
