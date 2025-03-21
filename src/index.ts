@@ -33,7 +33,7 @@ export async function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): Pr
       semi: true,
       jsx: true,
       overrides: {
-        "antfu/top-level-function": "error", // https://github.com/antfu/eslint-plugin-antfu/blob/main/src/rules/top-level-function.md
+        "antfu/top-level-function": "error", // https://github.com/antfu/eslint-plugin-antfu/blob/main/src/rules/top-level-function.md this is one of the opinionated rules and Deno also use this rule https://docs.deno.com/runtime/contributing/style_guide/#top-level-functions-should-not-use-arrow-syntax
       },
     },
   } as const satisfies UserOptions);
