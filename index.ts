@@ -6,15 +6,13 @@ type UserOptions = Parameters<typeof antfu>[0];
 type UserConfigs = Parameters<typeof antfu>[1];
 type ESLintConfig = ReturnType<typeof antfu>;
 
-// eslint-disable-next-line ts/no-unsafe-assignment, antfu/no-top-level-await, ts/no-unsafe-call
+// eslint-disable-next-line antfu/no-top-level-await
 const tsconfigPath = await resolveTSConfig();
 
-export function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): ESLintConfig {
-  // eslint-disable-next-line ts/no-unsafe-assignment, ts/no-unsafe-call
+export async function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): Promise<ESLintConfig> {
   const _options = defu(options, {
     formatters: true,
     typescript: {
-      // eslint-disable-next-line ts/no-unsafe-assignment
       tsconfigPath,
     },
     yaml: {
@@ -30,7 +28,6 @@ export function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): ESLintCo
     },
   } as const satisfies UserOptions);
 
-  // eslint-disable-next-line ts/no-unsafe-call
   return antfu(_options, {
     rules: {
       "no-unreachable": "error",
