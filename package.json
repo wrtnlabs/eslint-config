@@ -26,7 +26,7 @@
   },
   "scripts": {
     "build": "unbuild",
-    "lint": "eslint .",
+    "lint": "eslint --cache .",
     "format": "nr lint --fix",
     "inspector": "nlx @eslint/config-inspector",
     "prepublishOnly": "nr lint && nr build && nlx publint",
