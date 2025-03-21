@@ -16,6 +16,10 @@ import { wrtnlabs } from "@wrtnlabs/eslint-config";
 export default wrtnlabs({ /* options */ });
 ```
 
+## Rules
+
+Check [inspector page](https://wrtnlabs.github.io/eslint-config/)
+
 ## License
 
 [MIT](./LICENSE)
