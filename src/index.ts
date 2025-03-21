@@ -18,6 +18,9 @@ export async function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): Pr
       overrides: {
         "ts/no-namespace": "warn", // namespace is not recommended, but we have a lot of namespaces, so now we just warn
       },
+      overridesTypeAware: {
+        "ts/strict-boolean-expressions": ["error", { allowNullableBoolean: false, allowNullableObject: false, allowString: false }], // compare with `null` and `undefined` is not allowed
+      },
     },
     yaml: {
       overrides: {
