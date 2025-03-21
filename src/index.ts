@@ -15,6 +15,9 @@ export async function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): Pr
     formatters: true,
     typescript: {
       tsconfigPath,
+      overrides: {
+        "ts/no-namespace": "warn", // namespace is not recommended, but we have a lot of namespaces, so now we just warn
+      },
     },
     yaml: {
       overrides: {
@@ -32,7 +35,6 @@ export async function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): Pr
   return antfu(_options, {
     rules: {
       "no-unreachable": "error",
-      "ts/no-namespace": "warn",
     },
   }, ...args);
 }
