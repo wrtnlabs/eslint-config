@@ -11,6 +11,7 @@ const tsconfigPath = await resolveTSConfig();
 
 export async function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): Promise<ESLintConfig> {
   const _options = defu(options, {
+    lessOpinionated: true,
     formatters: true,
     typescript: {
       tsconfigPath,
