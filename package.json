@@ -29,7 +29,6 @@
     "lint": "eslint .",
     "format": "nr lint --fix",
     "inspector": "nlx @eslint/config-inspector",
-    "inspector:build": "nlx @eslint/config-inspector build",
     "prepublishOnly": "nr lint && nr build && nlx publint",
     "release": "nr lint && nr build && nlx publint && nlx bumpp"
   },
