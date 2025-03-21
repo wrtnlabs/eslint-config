@@ -1,5 +1,7 @@
 # @wrtnlabs/eslint-config
 
+[![npm version](https://img.shields.io/npm/v/@wrtnlabs/eslint-config?color=yellow)](https://npmjs.com/package/@wrtnlabs/eslint-config)
+
 ## Installation
 
 ```sh
