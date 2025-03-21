@@ -1,0 +1,16 @@
+name: CI
+
+on:
+    push:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: none
+    steps:
+        - uses: actions/checkout@v4
+        - uses: pnpm/action-setup@v4
+        - run: pnpm install --frozen-lockfile
+        - run: pnpm lint
