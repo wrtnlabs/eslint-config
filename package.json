@@ -5,6 +5,10 @@
   "packageManager": "pnpm@10.6.4",
   "author": "sunrabbit123",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wrtnlabs/eslint-config.git"
+  },
   "exports": "./index.ts",
   "scripts": {
     "lint": "eslint .",
