@@ -31,6 +31,7 @@ export async function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): Pr
   return antfu(_options, {
     rules: {
       "no-unreachable": "error",
+      "ts/no-namespace": "warn",
     },
   }, ...args);
 }
