@@ -9,10 +9,26 @@
     "type": "git",
     "url": "https://github.com/wrtnlabs/eslint-config.git"
   },
-  "exports": "./index.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": "^18.18.0 || >=20.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
+    "build": "unbuild",
     "lint": "eslint .",
     "format": "nr lint --fix",
+    "prepublishOnly": "nr lint && nlx publint && nr build",
     "release": "nr lint && nlx publint && nlx bumpp"
   },
   "dependencies": {
@@ -26,7 +42,9 @@
     "bumpp": "^10.1.0",
     "eslint": "^9.22.0",
     "importx": "^0.5.2",
+    "mkdist": "^2.2.0",
     "publint": "^0.3.9",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.2",
+    "unbuild": "^3.5.0"
   }
 }
