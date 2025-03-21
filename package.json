@@ -12,7 +12,8 @@
   "exports": "./index.ts",
   "scripts": {
     "lint": "eslint .",
-    "format": "eslint --fix ."
+    "format": "nr lint --fix",
+    "release": "nr lint && nlx publint && nlx bumpp"
   },
   "dependencies": {
     "@antfu/eslint-config": "^4.10.2",
@@ -21,8 +22,11 @@
     "pkg-types": "^2.1.0"
   },
   "devDependencies": {
+    "@antfu/ni": "^24.3.0",
+    "bumpp": "^10.1.0",
     "eslint": "^9.22.0",
     "importx": "^0.5.2",
+    "publint": "^0.3.9",
     "typescript": "^5.8.2"
   }
 }
