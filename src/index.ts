@@ -7,7 +7,7 @@ type UserConfigs = Parameters<typeof antfu>[1];
 type ESLintConfig = ReturnType<typeof antfu>;
 
 // eslint-disable-next-line antfu/no-top-level-await
-const tsconfigPath = await resolveTSConfig();
+const tsconfigPath = await resolveTSConfig().then(path => path).catch(() => undefined);
 
 export async function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): Promise<ESLintConfig> {
   const _options = defu(options, {
@@ -37,6 +37,10 @@ export async function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): Pr
       },
     },
   } as const satisfies UserOptions);
+
+	if (typeof _options.typescript !== 'boolean' && _options?.typescript?.tsconfigPath == null) {
+		console.warn('tsconfig.json is not found. we cannot use type-aware rules.');
+	}
 
   return antfu(_options, {
     rules: {
