@@ -38,9 +38,9 @@ export async function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): Pr
     },
   } as const satisfies UserOptions);
 
-	if (typeof _options.typescript !== 'boolean' && _options?.typescript?.tsconfigPath == null) {
-		console.warn('tsconfig.json is not found. we cannot use type-aware rules.');
-	}
+  if (typeof _options.typescript !== "boolean" && _options?.typescript?.tsconfigPath == null) {
+    console.warn("tsconfig.json is not found. we cannot use type-aware rules.");
+  }
 
   return antfu(_options, {
     rules: {
