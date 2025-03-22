@@ -41,7 +41,7 @@ export async function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): Pr
   return antfu(_options, {
     rules: {
       "no-unreachable": "error",
-      "no-redeclare": "warn", // for type hierarchy structure(ex: ChatCompletion.Choice)
+      "ts/no-redeclare": "warn", // for type hierarchy structure(ex: ChatCompletion.Choice)
     },
   }, ...args);
 }
