@@ -41,7 +41,13 @@ export async function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): Pr
   return antfu(_options, {
     rules: {
       "no-unreachable": "error",
-      "ts/no-redeclare": "warn", // for type hierarchy structure(ex: ChatCompletion.Choice)
+      /**
+       * @see https://typescript-eslint.io/rules/no-redeclare/
+       * The code problem checked by this ESLint rule is automatically checked by the TypeScript compiler.
+       * Thus, it is not recommended to turn on this rule in new TypeScript projects.
+       * You only need to enable this rule if you prefer the ESLint error messages over the TypeScript compiler error messages.
+       */
+      "ts/no-redeclare": "off",
     },
   }, ...args);
 }
