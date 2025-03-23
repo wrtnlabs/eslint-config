@@ -6,8 +6,9 @@ type UserOptions = Parameters<typeof antfu>[0];
 type UserConfigs = Parameters<typeof antfu>[1];
 type ESLintConfig = ReturnType<typeof antfu>;
 
+// get tsconfig.json path, if it does not exist, it will be undefined
 // eslint-disable-next-line antfu/no-top-level-await
-const tsconfigPath = await resolveTSConfig().then(path => path).catch(() => undefined);
+const tsconfigPath = await resolveTSConfig().catch(() => undefined);
 
 export async function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): Promise<ESLintConfig> {
   const _options = defu(options, {
