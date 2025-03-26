@@ -10,11 +10,22 @@
     "url": "https://github.com/wrtnlabs/eslint-config.git"
   },
   "exports": {
-    ".": {
-      "types": "./dist/index.d.mts",
-      "import": "./dist/index.mjs"
-    },
-    "./package.json": "./package.json"
+    ".": "./src/index.ts",
+    "./next": "./src/next.ts"
+  },
+  "publishConfig": {
+    "access": "public",
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.mjs"
+      },
+      "./next": {
+        "types": "./dist/next.d.ts",
+        "default": "./dist/next.mjs"
+      },
+      "./package.json": "./package.json"
+    }
   },
   "files": [
     "LICENSE",
