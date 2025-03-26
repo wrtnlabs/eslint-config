@@ -29,8 +29,8 @@
     "lint": "eslint --cache .",
     "format": "nr lint --fix",
     "inspector": "nlx @eslint/config-inspector",
-    "prepublishOnly": "nr lint && nr build && nlx publint",
-    "release": "nr lint && nr build && nlx publint && nlx bumpp"
+    "prepack": "nr lint && nr build && nlx publint",
+    "release": "nr prepack && nlx bumpp"
   },
   "dependencies": {
     "@antfu/eslint-config": "^4.10.2",
