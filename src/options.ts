@@ -11,6 +11,16 @@ export type UserOptions = Parameters<typeof antfu>[0] & {
    * @default false
    */
   tailwindcss?: boolean | TailwindCssOptions;
+
+  /**
+   * Enable next.js rules.
+   *
+   * Requires installing:
+   * - `@next/eslint-plugin-next`
+   *
+   * @default false
+   */
+  next?: boolean;
 };
 export type UserConfigs = Parameters<typeof antfu>[1];
 export type ESLintConfig = ReturnType<typeof antfu>;
