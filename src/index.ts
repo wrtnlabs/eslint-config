@@ -1,10 +1,7 @@
+import type { ESLintConfig, UserConfigs, UserOptions } from "./options";
 import antfu from "@antfu/eslint-config";
 import defu from "defu";
 import { resolveTSConfig } from "pkg-types";
-
-type UserOptions = Parameters<typeof antfu>[0];
-type UserConfigs = Parameters<typeof antfu>[1];
-type ESLintConfig = ReturnType<typeof antfu>;
 
 // get tsconfig.json path, if it does not exist, it will be undefined
 // eslint-disable-next-line antfu/no-top-level-await
