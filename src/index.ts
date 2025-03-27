@@ -47,6 +47,13 @@ export async function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): Pr
   return antfu(_options, {
     rules: {
       "no-unreachable": "error",
+      "import/order": ["error", {
+        "newlines-between": "always",
+        "alphabetize": {
+          order: "asc",
+          caseInsensitive: true,
+        },
+      }],
     },
   }, ...args);
 }
