@@ -14,8 +14,9 @@ export async function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): Pr
     typescript: {
       tsconfigPath,
       overrides: {
-        "ts/no-redeclare": "warn", // for type hierarchy structure(ex: ChatCompletion.Choice)
-        "ts/no-namespace": "warn", // namespace is not recommended, but we have a lot of namespaces, so now we just warn
+        // ref: https://github.com/wrtnlabs/eslint-config/issues/11
+        "ts/no-redeclare": "off", // for type hierarchy structure(ex: ChatCompletion.Choice)
+        "ts/no-namespace": "off", // namespace is not recommended, but we have a lot of namespaces, so now we just warn
       },
       overridesTypeAware: {
         "ts/strict-boolean-expressions": ["error", { allowNullableBoolean: false, allowNullableObject: false, allowString: false }], // compare with `null` and `undefined` is not allowed
