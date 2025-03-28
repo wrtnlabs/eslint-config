@@ -1,7 +1,8 @@
-import type { ESLintConfig, UserConfigs, UserOptions } from "./options";
 import antfu from "@antfu/eslint-config";
 import defu from "defu";
 import { resolveTSConfig } from "pkg-types";
+
+import type { ESLintConfig, UserConfigs, UserOptions } from "./options";
 
 export async function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): Promise<ESLintConfig> {
 // get tsconfig.json path, if it does not exist, it will be undefined
@@ -43,12 +44,12 @@ export async function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): Pr
   return antfu(_options, {
     rules: {
       "no-unreachable": "error",
+      // sort-imports and import/order have conflicting rules. Therefore, we disable sort-imports.
+      "perfectionist/sort-imports": "off",
       "import/order": ["error", {
+        "groups": ["builtin", "external", "internal", "index", "type"],
         "newlines-between": "always",
-        "alphabetize": {
-          order: "asc",
-          caseInsensitive: true,
-        },
+        "sortTypesGroup": false,
       }],
     },
   }, ...args);
