@@ -41,8 +41,8 @@
     "lint": "eslint --cache .",
     "format": "nr lint --fix",
     "inspector": "nlx @eslint/config-inspector",
-    "prepublishOnly": "nr lint && nr build && nlx publint",
-    "release": "nr lint && nr build && nlx publint && nlx bumpp"
+    "prepack": "nr build",
+    "release": "nr lint && nr prepack && nr publint && nlx bumpp"
   },
   "peerDependencies": {
     "@next/eslint-plugin-next": "^15.2.4",
