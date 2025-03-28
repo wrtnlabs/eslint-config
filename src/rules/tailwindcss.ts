@@ -1,5 +1,6 @@
-import type { TypedFlatConfigItem } from "@antfu/eslint-config";
 import { interopDefault } from "@antfu/eslint-config";
+
+import type { TypedFlatConfigItem } from "@antfu/eslint-config";
 
 export interface TailwindCssOptions {
 /**

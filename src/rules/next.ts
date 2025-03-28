@@ -1,7 +1,8 @@
 /* eslint-disable ts/no-unsafe-member-access */
 /* eslint-disable ts/no-unsafe-assignment */
-import type { TypedFlatConfigItem } from "@antfu/eslint-config";
 import { interopDefault } from "@antfu/eslint-config";
+
+import type { TypedFlatConfigItem } from "@antfu/eslint-config";
 
 export async function next(enabled = false): Promise<TypedFlatConfigItem[]> {
   if (!enabled) {
@@ -9,7 +10,7 @@ export async function next(enabled = false): Promise<TypedFlatConfigItem[]> {
   }
 
   // @ts-expect-error no dts
-  const nextPlugin: any = await interopDefault(import("@next/eslint-plugin-next"));
+  const nextPlugin = await interopDefault(import("@next/eslint-plugin-next"));
   return [
     {
       plugins: {
