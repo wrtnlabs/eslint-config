@@ -4,6 +4,8 @@ import { resolveTSConfig } from "pkg-types";
 
 import type { ESLintConfig, UserConfigs, UserOptions } from "./options";
 
+import { next, tailwindCss } from "./rules";
+
 export async function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): Promise<ESLintConfig> {
 // get tsconfig.json path, if it does not exist, it will be undefined
   const tsconfigPath = await resolveTSConfig().catch(() => undefined);
@@ -42,16 +44,25 @@ export async function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): Pr
     console.warn("tsconfig.json is not found. we cannot use type-aware rules.");
   }
 
-  return antfu(_options, {
-    rules: {
-      "no-unreachable": "error",
-      // sort-imports and import/order have conflicting rules. Therefore, we disable sort-imports.
-      "perfectionist/sort-imports": "off",
-      "import/order": ["error", {
-        "groups": ["builtin", "external", "internal", "index", "type"],
-        "newlines-between": "always",
-        "sortTypesGroup": false,
-      }],
+  const tailwindRules = await tailwindCss(_options.tailwindcss);
+  const nextJsRules = await next(_options.next);
+
+  return antfu(
+    _options,
+    {
+      rules: {
+        "no-unreachable": "error",
+        // sort-imports and import/order have conflicting rules. Therefore, we disable sort-imports.
+        "perfectionist/sort-imports": "off",
+        "import/order": ["error", {
+          "groups": ["builtin", "external", "internal", "index", "type"],
+          "newlines-between": "always",
+          "sortTypesGroup": false,
+        }],
+      },
     },
-  }, ...args);
+    ...tailwindRules,
+    ...nextJsRules,
+    ...args,
+  );
 }
