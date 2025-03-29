@@ -42,7 +42,7 @@
     "format": "nr lint --fix",
     "inspector": "nlx @eslint/config-inspector",
     "prepack": "nr build",
-    "release": "nr lint && nr prepack && nr publint && nlx bumpp"
+    "release": "nr lint && nr prepack && publint && nlx bumpp"
   },
   "peerDependencies": {
     "@next/eslint-plugin-next": "^15.2.4",
