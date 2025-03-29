@@ -1,4 +1,4 @@
-import { interopDefault } from "@antfu/eslint-config";
+import { ensurePackages, interopDefault } from "@antfu/eslint-config";
 
 import type { TypedFlatConfigItem } from "@antfu/eslint-config";
 
@@ -21,6 +21,8 @@ export async function tailwindCss(options: TailwindCssOptions | boolean = false)
   if (options === true) {
     options = {};
   }
+
+  await ensurePackages(["eslint-plugin-tailwindcss"]);
 
   const {
     strict = false,
