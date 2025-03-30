@@ -29,7 +29,10 @@ export const wrtnlabsNext = (async (options, ...args): Promise<ESLintConfig> => 
       files: ["**/*.tsx"],
       rules: {
         "ts/no-misused-promises": ["error", {
-          checksVoidReturn: false, // happens error when we pass promises to jsx attributes https://github.com/typescript-eslint/typescript-eslint/issues/4619
+          // happens error when we pass promises to jsx attributes https://github.com/typescript-eslint/typescript-eslint/issues/4619
+          checksVoidReturn: {
+            attributes: false,
+          },
         }],
       },
     },
