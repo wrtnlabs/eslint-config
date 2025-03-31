@@ -1,8 +1,8 @@
 import { defu } from "defu";
 
-import { wrtnlabs } from "./index";
-
 import type { ESLintConfig, UserOptions } from "./options";
+
+import { wrtnlabs } from "./index";
 
 export const wrtnlabsNext = (async (options, ...args): Promise<ESLintConfig> => {
   const _options = defu(
