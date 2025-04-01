@@ -1,4 +1,5 @@
 import type antfu from "@antfu/eslint-config";
+
 import type { TailwindCssOptions } from "./rules";
 
 export type UserOptions = Parameters<typeof antfu>[0] & {

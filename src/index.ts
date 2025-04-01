@@ -52,13 +52,12 @@ export async function wrtnlabs(options: UserOptions, ...args: UserConfigs[]): Pr
     {
       rules: {
         "no-unreachable": "error",
-        // sort-imports and import/order have conflicting rules. Therefore, we disable sort-imports.
-        "perfectionist/sort-imports": "off",
-        "import/order": ["error", {
-          "groups": ["builtin", "external", "internal", "index", "type"],
-          "newlines-between": "always",
-          "sortTypesGroup": false,
+        // sort-imports and import/order have conflicting rules. Therefore, we disable import/order.
+        "perfectionist/sort-imports": ["error", {
+          order: "asc",
+          groups: ["builtin", "type", "external", "internal-type", "internal", "parent-type", "parent", "sibling-type", "sibling", "index-type", "index"],
         }],
+        "import/order": "off",
       },
     },
     ...tailwindRules,
