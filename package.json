@@ -36,7 +36,7 @@
     "node": "^18.18.0 || >=20.0.0"
   },
   "scripts": {
-    "prepare": "husky",
+    "prepare": "simple-git-hooks",
     "build": "unbuild",
     "lint": "eslint --cache .",
     "format": "nr lint --fix",
@@ -71,11 +71,11 @@
     "eslint": "^9.22.0",
     "eslint-plugin-format": "^1.0.1",
     "eslint-plugin-tailwindcss": "^3.18.0",
-    "husky": "^9.1.7",
     "importx": "^0.5.2",
     "lint-staged": "^15.5.0",
     "mkdist": "^2.2.0",
     "publint": "^0.3.9",
+    "simple-git-hooks": "^2.12.1",
     "typescript": "^5.8.2",
     "unbuild": "^3.5.0"
   },
@@ -83,5 +83,8 @@
     "*": [
       "eslint --cache --fix"
     ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
   }
 }
